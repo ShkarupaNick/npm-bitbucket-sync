@@ -1,0 +1,45 @@
+{
+  "name": "npm-bitbucket-sync",
+  "version": "1.0.0",
+  "description": "The package to sync package.json info from npm to bitbucket repo",
+  "main": "index.js",
+  "scripts": {
+    "audit": "better-npm-audit audit --level high --production",
+    "build": "tsc",
+    "start": "NODE_ENV=test node ./dist/index.js",
+    "pretest": "npm run lint",
+    "lint": "eslint --fix --ext .ts .",
+    "license-check": "license-checker --excludePrivatePackages --excludePackages \"$(node ../../.ignored-licenses.js)\" --onlyAllow \"$(node ../../.allowed-licenses.js)\"",
+    "test": "node node_modules/.bin/_mocha --config=./spec/.mocharc.js",
+    "dev:local": "NODE_ENV=local node --trace-warnings --require ts-node/register ./src/index.ts | bunyan"
+  },
+  "keywords": [
+    "npm",
+    "bitbucket",
+    "sync"
+  ],
+  "author": "Nick Shkarupa",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "bitbucket": "2.11.0",
+    "bunyan": "1.8.15",
+    "form-data": "^4.0.0",
+    "nconf": "^0.12.0"
+  },
+  "devDependencies": {
+    "@types/bunyan": "1.8.8",
+    "@types/mocha": "10.0.1",
+    "@types/nconf": "0.10.3",
+    "@types/node": "20.1.1",
+    "@typescript-eslint/eslint-plugin": "5.59.5",
+    "@typescript-eslint/parser": "5.59.5",
+    "better-npm-audit": "3.7.3",
+    "chai": "4.3.7",
+    "eslint": "8.40.0",
+    "mocha": "10.2.0",
+    "nock": "13.3.1",
+    "ts-node": "10.9.1",
+    "typescript": "5.0.4"
+  }
+}
