@@ -1,4 +1,4 @@
-# Automated Pull Request Script
+# Automated Pull Request Script 777
 
 This document outlines the implementation details for a Node.js script that updates the `package.json` file in a BitBucket repository and opens a pull request. The script will be run manually initially and can be integrated into the existing system later.
 
